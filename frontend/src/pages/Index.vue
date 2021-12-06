@@ -9,13 +9,12 @@
             <q-icon class="column col-1" name="o_cottage" size="xl"></q-icon>
          </div>
        </div>
-       <div class="carousel__container fit row wrap justify-center items-center content-center bg-grey-2">
-        <q-responsive ratio="1.5" class="col bg-grey-2" style="min-height: 25em; max-width: 40em;">
+       <div class="carousel__container full-width row wrap justify-center items-center content-center bg-grey-2">
+        <q-responsive ratio="1.5" class="col full-width bg-grey-2" style="max-height: 25em;">
           <q-carousel
             v-model="slide"
             transition-prev="scale"
             transition-next="scale"
-            swipeable
             animated
             control-color="accent"
             navigation
@@ -144,6 +143,7 @@ export default defineComponent({
 
     .carousel__container {
       display: flex;
+      max-height: 20em;
     }
 
     .recent__table {
@@ -153,16 +153,7 @@ export default defineComponent({
       border-radius: 15px;
     }
 
-    .q-responsive {
-      .q-responsive__content {
-        .q-panel-parent {
-          background-color: $grey-2 !important;
-        }
-      }    
-    }
-
-
-.expansion-item {
+    .expansion-item {
       display: flex;
       margin-top: 1em;
       border-radius: 15px;
@@ -189,6 +180,9 @@ export default defineComponent({
   }
 
   @media(max-width: $breakpoint-md-min) {
-
+    .q-responsive {
+      height: 25em;
+      margin-top: 5em;
+    }
   }
 </style>
